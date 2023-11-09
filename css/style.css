@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: black;
+}
+
+#preLoader {
+  position: fixed;
+  z-index: 100000000000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: preLoaderBG 15s ease infinite;
+  color: white;
+}
+#preLoader .loading {
+  position: relative;
+  width: clamp(250px, 80vw, 400px);
+  height: clamp(250px, 80vw, 400px);
+}
+#preLoader .loading .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+}
+#preLoader .loading .logo .name {
+  font-size: 4em;
+}
+#preLoader .loading .logo .text {
+  animation: loading 3s linear infinite;
+}
+@keyframes loading {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+#preLoader .loading .loader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: animate 1.2s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#preLoader .loading span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+#preLoader .loading span:nth-child(1) {
+  filter: blur(5px);
+}
+#preLoader .loading span:nth-child(2) {
+  filter: blur(10px);
+}
+#preLoader .loading span:nth-child(3) {
+  filter: blur(25px);
+}
+#preLoader .loading span:nth-child(4) {
+  filter: blur(50px);
+}
+#preLoader .loader:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #f1f1f1;
+  border-radius: 50%;
+}
+#preLoader .poweredby {
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#preLoader .poweredby img {
+  width: 127px;
+  height: 27px;
+}
+
+@keyframes preLoaderBG {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}/*# sourceMappingURL=style.css.map */
