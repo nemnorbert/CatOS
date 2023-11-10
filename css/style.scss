@@ -23,6 +23,11 @@ html {
     user-select: none;
     background-color: black;
 }
+.btn {
+    background-color: magenta;
+    padding: 1em;
+    border-radius: 1em;
+}
 
 // PreLoader
 #preLoader {
@@ -37,13 +42,13 @@ html {
     background-size: 400% 400%;
     animation: preLoaderBG 15s ease infinite;
     color: white;
+    transition: transform 1s;
 
-
-    .loading {
+    #loadingCircle {
         position: relative;
         width: $loadingSize;
         height: $loadingSize;
-
+        transition: transform 1s;
     .logo {
         position: absolute;
         top: 50%;
@@ -54,9 +59,10 @@ html {
 
         .name {
             font-size: 4em;
+            font-weight: bold;
         }
         .text {
-            animation: loading 3s linear infinite;
+            animation: loading 2.4s linear infinite;
         }
         @keyframes loading {
             0%, 100% {opacity: 1;}
@@ -69,15 +75,18 @@ html {
         height: 100%;
         border-radius: 50%;
         background: linear-gradient($loadingBGColors);
-        animation: animate 1.2s linear infinite;
+        animation: animate 2.4s linear infinite;
         }
 
         @keyframes animate {
             0% {
-                transform: rotate(0deg);
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(.95);
             }
             100% {
-                transform: rotate(360deg);
+                transform: rotate(360deg) scale(1);
             }
         }
 
@@ -115,6 +124,23 @@ html {
         background: #f1f1f1;
         border-radius: 50%;
     }
+
+    #installBox {
+        position: absolute;
+        transform: translateY(300%);
+        transition: transform 1s;
+        background-color: white;
+        height: 400px;
+        width: $loadingSize;
+        border-radius: 2em;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
     
     .poweredby {
         position: fixed;
@@ -123,8 +149,7 @@ html {
         transform: translateX(-50%);
 
         img {
-            width: 127px;
-            height: 27px;
+            width: 130px;
         }
     }
 }
