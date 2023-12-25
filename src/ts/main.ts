@@ -1,6 +1,5 @@
 let loadtime: number = new Date().getTime();
 const loadingCircle: HTMLElement | null = document.querySelector('#loadingCircle');
-const installBox: HTMLElement | null = document.querySelector('#installBox');
 
 // JSON Fetch
 const fetchJSON = async (url: string) => {
@@ -19,6 +18,8 @@ const fetchJSON = async (url: string) => {
 // PreLoader
 const preLoader = async () => {
     const preLoader: HTMLElement | null = document.querySelector('#preLoader');
+    const bootBox: HTMLElement | null = document.querySelector("#boot");
+
     loadtime = (new Date().getTime() - loadtime) / 1000;
     console.log(loadtime);
   
@@ -28,8 +29,12 @@ const preLoader = async () => {
     await delay(loadtime_bonus);
   
     loadingCircle.style.transform = "translateY(-300%)";
-    installBox.style.transform = "translateY(0%)";
+    bootBox.style.transform = "translateY(0%)";
 
+    document.querySelector("#boot .btn")?.addEventListener("click", event => {
+      bootBox.style.display = "none";
+      preLoader.style.display = "none";
+    })
     /*
     if (preLoader !== null) {
       setTimeout(() => {
@@ -39,4 +44,4 @@ const preLoader = async () => {
     */
 }
 
-window.addEventListener("load", preLoader);
+//window.addEventListener("load", preLoader);

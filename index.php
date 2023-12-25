@@ -21,7 +21,7 @@
         </div>
     </div>
     
-    <div id="installBox">
+    <div id="boot">
         <div>Üdvözlünk</div>
         <div class="btn">Indítás</div>
     </div>
@@ -30,7 +30,20 @@
         <div>Powered by</div>
         <img src="./img/logo1.svg" alt="Logo of Creator">
     </a>
-</div>    
+</div>
+
+<main>
+    <nav class="statusbar">
+        <div class="menu">MENU</div>
+        <div id="time">??:??</div>
+    </nav>
+
+    <nav class="menubar">
+        <div class="icon calculator"></div>
+        <div class="icon browser"></div>
+        <div class="icon settings"></div>
+    </nav>
+</main>
 
 <script src="./js/main.js"></script>
 </body>
